@@ -1,5 +1,7 @@
 # UltimateTicTacToe
 
-- [ ] Make website
-    - [ ] Test 2
+## TODO
+- [ ] Make game
+    - [ ] Game functions
 - [ ] Make bot
+    - [ ] Minmax search
