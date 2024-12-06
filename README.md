@@ -1,4 +1,5 @@
 # UltimateTicTacToe
 
 - [ ] Make website
-- [x] Make bot
+    - [ ] Test 2
+- [ ] Make bot
