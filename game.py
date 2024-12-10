@@ -5,9 +5,7 @@ class LittleBoard:
             ["_"]*3,
             ["_"]*3
         ]
-        self.status = ""
-        self.player_alternator = self.change_players()
-        self.to_move = self.player_alternator.__next__()
+        self.to_move = "X"
 
     def __str__(self):
         s = ""
@@ -52,22 +50,12 @@ class LittleBoard:
             return d
         return False
     
-    def make_move(self, row, col):
+    def make_move(self, row, col, player):
         if self.board[row][col] != "_":
             return False
-        self.board[row][col] = self.to_move
-        self.to_move = self.player_alternator.__next__()
+        self.board[row][col] = player
+        self.to_move = "X" if self.to_move == "O" else "O"
         return True
-    
-    def change_players(self):
-        while True:
-            yield "X"
-            yield "O"
-
-    def force_move(self, row, col, player):
-        if self.board[row][col] == "_":
-            self.board[row][col] = player
-
 
 class BigBoard:
     def __init__(self):
@@ -78,6 +66,19 @@ class BigBoard:
             "small_row": -1,
             "small_col": -1
         }
+
+    def make_move(self, big_row, big_col, small_row, small_col):
+        if big_row != self.prev_move["small_row"] or big_col != self.prev_move["small_col"]:
+            if self.prev_move["small_row"] != -1:
+                return False
+            
+        if self.big_board[big_row][big_col].make_move(small_row, small_col):
+            if self.big_board[big_row][big_col].check_winner():
+                self.prev_move["small_row"] = -1
+                self.game_state.force_move(big_row, big_col, self.to_move)
+            return True
+    
+    
 
     
 
