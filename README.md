@@ -2,6 +2,9 @@
 
 ## TODO
 - [ ] Make game
-    - [ ] Game functions
+    - [x] Game functions
+    - [ ] Website
+        - [ ] Website Styling
 - [ ] Make bot
     - [ ] Minmax search
+- [ ] Host on Vercel
