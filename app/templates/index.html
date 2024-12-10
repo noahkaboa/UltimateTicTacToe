@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
 </head>
 <body>
+    <div class="info">
+        <div class="player" id="player">{{ current_player }}</div>
+        <div class="winner" id="winner"></div>
+    </div>
     <div class="board">
         <div class="mini-board" id="mini-0">
             <div class="mini-square" id="0-0"></div>
@@ -109,4 +113,5 @@
         </div>
     </div>
 </body>
+<script src="{{url_for('static', filename='main.js')}}"></script>
 </html>
