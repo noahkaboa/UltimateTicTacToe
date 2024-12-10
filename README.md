@@ -12,3 +12,5 @@
     * Azure for student
     * AWS
     * Oracle maybe?
+    * Digital Ocean?
+    * Maybe sockets/local stuff?
