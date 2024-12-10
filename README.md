@@ -8,3 +8,4 @@
 - [ ] Make bot
     - [ ] Minmax search
 - [ ] Host on Vercel
+- [ ] Online Multiplayer

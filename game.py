@@ -1,5 +1,3 @@
-import os
-
 class LittleBoard:
     def __init__(self):
         self.board = [
@@ -106,26 +104,6 @@ class BigBoard:
         else:
             return False
         
-
-    
-
-    
-
-# b = LittleBoard()
-
-# while not b.check_winner():
-#     print(b.board)
-#     print(f"{b.to_move} to move")
-
-#     valid_move = False
-#     while not valid_move:
-#         row = int(input("Row:\t"))
-#         col = int(input("Col:\t"))
-#         valid_move = b.make_move(row, col, b.to_move)
-#         if not valid_move:
-#             print("Invalid Move! try again")
-
-
 class Game:
     def __init__(self):
         self.board = BigBoard()
