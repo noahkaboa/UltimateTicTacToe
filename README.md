@@ -7,5 +7,8 @@
         - [ ] Website Styling
 - [ ] Make bot
     - [ ] Minmax search
-- [ ] Host on Vercel
-- [ ] Online Multiplayer
+- [ ] Look into hosting / online multiplayer
+    * Vercel
+    * Azure for student
+    * AWS
+    * Oracle maybe?
