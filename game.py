@@ -126,46 +126,46 @@ class BigBoard:
 #             print("Invalid Move! try again")
 
 
-g = BigBoard()
+class Game:
+    def __init__(self):
+        self.board = BigBoard()
 
-while not g.game_state.check_winner() in ["X", "O"]:
-    os.system('cls')
-    print(g.game_state)
-    print(g)
-    print(f"{g.to_move} to move")
-    print(f"{g.prev_move=}")
+    def play(self):
+        while not self.board.game_state.check_winner() in ["X", "O"]:
+            print(self.board.game_state)
+            print(self.board)
+            print(f"{self.board.to_move} to move")
+            print(f"{self.board.prev_move=}")
 
+            
+            valid_move = False
+            while not valid_move:
+                big_row = input("Big Row:\t")
+                if big_row.isdigit():
+                    big_row = int(big_row)
+                else:
+                    print("Invalid Move! Try again")
+                    continue
+                big_col = input("Big Col:\t")
+                if big_col.isdigit():
+                    big_col = int(big_col)
+                else:
+                    print("Invalid Move! Try again")
+                    continue
+                small_row = input("Small Row:\t")
+                if small_row.isdigit():
+                    small_row = int(small_row)
+                else:
+                    print("Invalid Move! Try again")
+                    continue
+                small_col = input("Small Col:\t")
+                if small_col.isdigit():
+                    small_col = int(small_col)
+                else:
+                    print("Invalid Move! Try again")
+                    continue
+                
+                valid_move = self.board.make_move(big_row, big_col, small_row, small_col)
+                if not valid_move:
+                    print("Invalid Move! Try again")
     
-    valid_move = False
-    while not valid_move:
-        big_row = input("Big Row:\t")
-        if big_row.isdigit():
-            big_row = int(big_row)
-        else:
-            print("Invalid Move! Try again")
-            continue
-        big_col = input("Big Col:\t")
-        if big_col.isdigit():
-            big_col = int(big_col)
-        else:
-            print("Invalid Move! Try again")
-            continue
-        small_row = input("Small Row:\t")
-        if small_row.isdigit():
-            small_row = int(small_row)
-        else:
-            print("Invalid Move! Try again")
-            continue
-        small_col = input("Small Col:\t")
-        if small_col.isdigit():
-            small_col = int(small_col)
-        else:
-            print("Invalid Move! Try again")
-            continue
-        
-        valid_move = g.make_move(big_row, big_col, small_row, small_col)
-        if not valid_move:
-            print("Invalid Move! Try again")
-
-print("Congrats!")
-print(g.game_state.check_winner())
