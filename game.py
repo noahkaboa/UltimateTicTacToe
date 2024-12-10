@@ -59,7 +59,7 @@ class LittleBoard:
 
 class BigBoard:
     def __init__(self):
-        self.big_board = [[LittleBoard()] * 3] * 3
+        self.big_board = [[LittleBoard() for _ in range(3)] for _ in range(3)]
         self.game_state = LittleBoard()
         self.to_move = "X"
         self.prev_move = {
@@ -67,17 +67,28 @@ class BigBoard:
             "small_col": -1
         }
 
+
+
     def make_move(self, big_row, big_col, small_row, small_col):
         if big_row != self.prev_move["small_row"] or big_col != self.prev_move["small_col"]:
             if self.prev_move["small_row"] != -1:
                 return False
             
-        if self.big_board[big_row][big_col].make_move(small_row, small_col):
+        if self.big_board[big_row][big_col].make_move(small_row, small_col, self.to_move):
+            self.prev_move["small_row"] = small_row
+            self.prev_move["small_col"] = small_col
+            
             if self.big_board[big_row][big_col].check_winner():
                 self.prev_move["small_row"] = -1
-                self.game_state.force_move(big_row, big_col, self.to_move)
+                self.game_state.make_move(big_row, big_col, self.to_move)
+
+            self.to_move = "X" if self.to_move == "O" else "O"
+            
             return True
-    
+        else:
+            return False
+        
+
     
 
     
@@ -99,3 +110,4 @@ class BigBoard:
 
 g = BigBoard()
 print(g.game_state)
+print(g)
