@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ultimate Tic Tac Toe</title>
     <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 <body>
     <div class="info">
@@ -13,103 +14,103 @@
     </div>
     <div class="board">
         <div class="mini-board" id="mini-0">
-            <div class="mini-square" id="0-0-0-0"></div>
-            <div class="mini-square" id="0-0-0-1"></div>
-            <div class="mini-square" id="0-0-0-2"></div>
-            <div class="mini-square" id="0-0-1-0"></div>
+            <div class="mini-square remove-top remove-left" id="0-0-0-0"></div>
+            <div class="mini-square remove-top" id="0-0-0-1"></div>
+            <div class="mini-square remove-top remove-right" id="0-0-0-2"></div>
+            <div class="mini-square remove-left" id="0-0-1-0"></div>
             <div class="mini-square" id="0-0-1-1"></div>
-            <div class="mini-square" id="0-0-1-2"></div>
-            <div class="mini-square" id="0-0-2-0"></div>
-            <div class="mini-square" id="0-0-2-1"></div>
-            <div class="mini-square" id="0-0-2-2"></div>
+            <div class="mini-square remove-right" id="0-0-1-2"></div>
+            <div class="mini-square remove-bottom remove-left" id="0-0-2-0"></div>
+            <div class="mini-square remove-bottom" id="0-0-2-1"></div>
+            <div class="mini-square remove-bottom remove-right" id="0-0-2-2"></div>
         </div>
         <div class="mini-board" id="mini-1">
-            <div class="mini-square" id="0-1-0-0"></div>
-            <div class="mini-square" id="0-1-0-1"></div>
-            <div class="mini-square" id="0-1-0-2"></div>
-            <div class="mini-square" id="0-1-1-0"></div>
+            <div class="mini-square remove-top remove-left" id="0-1-0-0"></div>
+            <div class="mini-square remove-top" id="0-1-0-1"></div>
+            <div class="mini-square remove-top remove-right" id="0-1-0-2"></div>
+            <div class="mini-square remove-left" id="0-1-1-0"></div>
             <div class="mini-square" id="0-1-1-1"></div>
-            <div class="mini-square" id="0-1-1-2"></div>
-            <div class="mini-square" id="0-1-2-0"></div>
-            <div class="mini-square" id="0-1-2-1"></div>
-            <div class="mini-square" id="0-1-2-2"></div>
+            <div class="mini-square remove-right" id="0-1-1-2"></div>
+            <div class="mini-square remove-bottom remove-left" id="0-1-2-0"></div>
+            <div class="mini-square remove-bottom" id="0-1-2-1"></div>
+            <div class="mini-square remove-bottom remove-right" id="0-1-2-2"></div>
         </div>
         <div class="mini-board" id="mini-2">
-            <div class="mini-square" id="0-2-0-0"></div>
-            <div class="mini-square" id="0-2-0-1"></div>
-            <div class="mini-square" id="0-2-0-2"></div>
-            <div class="mini-square" id="0-2-1-0"></div>
+            <div class="mini-square remove-top remove-left" id="0-2-0-0"></div>
+            <div class="mini-square remove-top" id="0-2-0-1"></div>
+            <div class="mini-square remove-top remove-right" id="0-2-0-2"></div>
+            <div class="mini-square remove-left" id="0-2-1-0"></div>
             <div class="mini-square" id="0-2-1-1"></div>
-            <div class="mini-square" id="0-2-1-2"></div>
-            <div class="mini-square" id="0-2-2-0"></div>
-            <div class="mini-square" id="0-2-2-1"></div>
-            <div class="mini-square" id="0-2-2-2"></div>
+            <div class="mini-square remove-right" id="0-2-1-2"></div>
+            <div class="mini-square remove-bottom remove-left" id="0-2-2-0"></div>
+            <div class="mini-square remove-bottom" id="0-2-2-1"></div>
+            <div class="mini-square remove-bottom remove-right" id="0-2-2-2"></div>
         </div>
         <div class="mini-board" id="mini-3">
-            <div class="mini-square" id="1-0-0-0"></div>
-            <div class="mini-square" id="1-0-0-1"></div>
-            <div class="mini-square" id="1-0-0-2"></div>
-            <div class="mini-square" id="1-0-1-0"></div>
+            <div class="mini-square remove-top remove-left" id="1-0-0-0"></div>
+            <div class="mini-square remove-top" id="1-0-0-1"></div>
+            <div class="mini-square remove-top remove-right" id="1-0-0-2"></div>
+            <div class="mini-square remove-left" id="1-0-1-0"></div>
             <div class="mini-square" id="1-0-1-1"></div>
-            <div class="mini-square" id="1-0-1-2"></div>
-            <div class="mini-square" id="1-0-2-0"></div>
-            <div class="mini-square" id="1-0-2-1"></div>
-            <div class="mini-square" id="1-0-2-2"></div>
+            <div class="mini-square remove-right" id="1-0-1-2"></div>
+            <div class="mini-square remove-bottom remove-left" id="1-0-2-0"></div>
+            <div class="mini-square remove-bottom" id="1-0-2-1"></div>
+            <div class="mini-square remove-bottom remove-right" id="1-0-2-2"></div>
         </div>
         <div class="mini-board" id="mini-4">
-            <div class="mini-square" id="1-1-0-0"></div>
-            <div class="mini-square" id="1-1-0-1"></div>
-            <div class="mini-square" id="1-1-0-2"></div>
-            <div class="mini-square" id="1-1-1-0"></div>
+            <div class="mini-square remove-top remove-left" id="1-1-0-0"></div>
+            <div class="mini-square remove-top" id="1-1-0-1"></div>
+            <div class="mini-square remove-top remove-right" id="1-1-0-2"></div>
+            <div class="mini-square remove-left" id="1-1-1-0"></div>
             <div class="mini-square" id="1-1-1-1"></div>
-            <div class="mini-square" id="1-1-1-2"></div>
-            <div class="mini-square" id="1-1-2-0"></div>
-            <div class="mini-square" id="1-1-2-1"></div>
-            <div class="mini-square" id="1-1-2-2"></div>
+            <div class="mini-square remove-right" id="1-1-1-2"></div>
+            <div class="mini-square remove-bottom remove-left" id="1-1-2-0"></div>
+            <div class="mini-square remove-bottom" id="1-1-2-1"></div>
+            <div class="mini-square remove-bottom remove-right" id="1-1-2-2"></div>
         </div>
         <div class="mini-board" id="mini-5">
-            <div class="mini-square" id="1-2-0-0"></div>
-            <div class="mini-square" id="1-2-0-1"></div>
-            <div class="mini-square" id="1-2-0-2"></div>
-            <div class="mini-square" id="1-2-1-0"></div>
+            <div class="mini-square remove-top remove-left" id="1-2-0-0"></div>
+            <div class="mini-square remove-top" id="1-2-0-1"></div>
+            <div class="mini-square remove-top remove-right" id="1-2-0-2"></div>
+            <div class="mini-square remove-left" id="1-2-1-0"></div>
             <div class="mini-square" id="1-2-1-1"></div>
-            <div class="mini-square" id="1-2-1-2"></div>
-            <div class="mini-square" id="1-2-2-0"></div>
-            <div class="mini-square" id="1-2-2-1"></div>
-            <div class="mini-square" id="1-2-2-2"></div>
+            <div class="mini-square remove-right" id="1-2-1-2"></div>
+            <div class="mini-square remove-bottom remove-left" id="1-2-2-0"></div>
+            <div class="mini-square remove-bottom" id="1-2-2-1"></div>
+            <div class="mini-square remove-bottom remove-right" id="1-2-2-2"></div>
         </div>
         <div class="mini-board" id="mini-6">
-            <div class="mini-square" id="2-0-0-0"></div>
-            <div class="mini-square" id="2-0-0-1"></div>
-            <div class="mini-square" id="2-0-0-2"></div>
-            <div class="mini-square" id="2-0-1-0"></div>
+            <div class="mini-square remove-top remove-left" id="2-0-0-0"></div>
+            <div class="mini-square remove-top" id="2-0-0-1"></div>
+            <div class="mini-square remove-top remove-right" id="2-0-0-2"></div>
+            <div class="mini-square remove-left" id="2-0-1-0"></div>
             <div class="mini-square" id="2-0-1-1"></div>
-            <div class="mini-square" id="2-0-1-2"></div>
-            <div class="mini-square" id="2-0-2-0"></div>
-            <div class="mini-square" id="2-0-2-1"></div>
-            <div class="mini-square" id="2-0-2-2"></div>
+            <div class="mini-square remove-right" id="2-0-1-2"></div>
+            <div class="mini-square remove-bottom remove-left" id="2-0-2-0"></div>
+            <div class="mini-square remove-bottom" id="2-0-2-1"></div>
+            <div class="mini-square remove-bottom remove-right" id="2-0-2-2"></div>
         </div>
         <div class="mini-board" id="mini-7">
-            <div class="mini-square" id="2-1-0-0"></div>
-            <div class="mini-square" id="2-1-0-1"></div>
-            <div class="mini-square" id="2-1-0-2"></div>
-            <div class="mini-square" id="2-1-1-0"></div>
+            <div class="mini-square remove-top remove-left" id="2-1-0-0"></div>
+            <div class="mini-square remove-top" id="2-1-0-1"></div>
+            <div class="mini-square remove-top remove-right" id="2-1-0-2"></div>
+            <div class="mini-square remove-left" id="2-1-1-0"></div>
             <div class="mini-square" id="2-1-1-1"></div>
-            <div class="mini-square" id="2-1-1-2"></div>
-            <div class="mini-square" id="2-1-2-0"></div>
-            <div class="mini-square" id="2-1-2-1"></div>
-            <div class="mini-square" id="2-1-2-2"></div>
+            <div class="mini-square remove-right" id="2-1-1-2"></div>
+            <div class="mini-square remove-bottom remove-left" id="2-1-2-0"></div>
+            <div class="mini-square remove-bottom" id="2-1-2-1"></div>
+            <div class="mini-square remove-bottom remove-right" id="2-1-2-2"></div>
         </div>
         <div class="mini-board" id="mini-8">
-            <div class="mini-square" id="2-2-0-0"></div>
-            <div class="mini-square" id="2-2-0-1"></div>
-            <div class="mini-square" id="2-2-0-2"></div>
-            <div class="mini-square" id="2-2-1-0"></div>
+            <div class="mini-square remove-top remove-left" id="2-2-0-0"></div>
+            <div class="mini-square remove-top" id="2-2-0-1"></div>
+            <div class="mini-square remove-top remove-right" id="2-2-0-2"></div>
+            <div class="mini-square remove-left" id="2-2-1-0"></div>
             <div class="mini-square" id="2-2-1-1"></div>
-            <div class="mini-square" id="2-2-1-2"></div>
-            <div class="mini-square" id="2-2-2-0"></div>
-            <div class="mini-square" id="2-2-2-1"></div>
-            <div class="mini-square" id="2-2-2-2"></div>
+            <div class="mini-square remove-right" id="2-2-1-2"></div>
+            <div class="mini-square remove-bottom remove-left" id="2-2-2-0"></div>
+            <div class="mini-square remove-bottom" id="2-2-2-1"></div>
+            <div class="mini-square remove-bottom remove-right" id="2-2-2-2"></div>
         </div>
     </div>
 </body>
