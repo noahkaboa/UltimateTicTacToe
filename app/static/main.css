@@ -73,6 +73,7 @@ html {
     background-color: #000729;
     border: 2px solid white;
     margin: 0;
+    border-radius: 5%;
 }
 
 .mini-square:hover {
