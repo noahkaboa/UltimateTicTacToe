@@ -1,5 +1,7 @@
 html {
     background-color: #000729;
+    --x-color: #FF3131;
+    --o-color: #31FF31;
 }
 
 .x, .o {
@@ -14,10 +16,19 @@ html {
 }
 
 .x {
-    color: #FF3131;
+    color: var(--x-color);
 }
 .o {
-    color: #31FF31;
+    color: var(--o-color);
+}
+
+.x-win {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--x-color);
+    font-size: 5em;
 }
 
 .board {
