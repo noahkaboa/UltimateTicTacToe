@@ -28,7 +28,7 @@ html {
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--x-color);
-    font-size: 5em;
+    font-size: 10em;
     font-family: 'Tahoma', sans-serif;
     font-weight: bold;
 }
@@ -39,7 +39,7 @@ html {
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--o-color);
-    font-size: 5em;
+    font-size: 10em;
     font-family: 'Tahoma', sans-serif;
     font-weight: bold;
 }
@@ -61,6 +61,7 @@ html {
     height: 200px;
     padding: 10px;
     margin: 0;
+    position: relative
 }
 
 .mini-square {

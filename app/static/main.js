@@ -36,12 +36,14 @@ miniSquares.forEach(miniSquare => {
         }
     })
     return_data = JSON.parse(return_data)
-    console.log(return_data["success"])
     if (return_data['success']) {
         miniSquare.innerHTML = return_data['player'];
         miniSquare.classList.add(return_data['player'].toLowerCase());
         if (return_data['winner'] != null) {
             alert(return_data['winner'] + " wins!");
+        }
+        if (return_data['wins']){
+            miniSquare.parentElement.innerHTML += return_data['player'].toLowerCase()=="x" ? '<div class="x-win">X</div>' : '<div class="o-win">O</div>';
         }
     }
   });
