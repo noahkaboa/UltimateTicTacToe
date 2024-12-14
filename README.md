@@ -5,7 +5,7 @@
     - [x] Game functions
     - [ ] Website
         - [x] Website Styling
-        - [ ] Home page
+        - [x] Home page
         - [ ] Game page
         - [ ] Analysis board
             - [ ] FEN equivalent?
