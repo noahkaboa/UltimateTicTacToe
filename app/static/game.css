@@ -57,6 +57,8 @@ html {
     width: 440px;
     height: 440px;
     margin-inline: auto;
+    padding: 10px;
+    padding-right: 20%;
 }
 
 .mini-board {
@@ -101,4 +103,22 @@ html {
 }
 .possible:hover {
     background-color: #000729;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Tahoma', sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.info {
+    background-color: #FFFDD0;
+    width: 30%;
+    height: 90%;
+    margin: auto;
+    color:#000729;
+    padding: 10px;
 }
