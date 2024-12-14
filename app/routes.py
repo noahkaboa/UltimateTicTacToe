@@ -8,7 +8,11 @@ game = BigBoard()
 
 @app.route('/')
 def index():
-    return render_template('index.html', current_player=game.to_move)
+    return render_template('index.html')
+
+@app.route('/game')
+def game_page():
+    return render_template('game.html', current_player=game.to_move)
 
 @app.route('/play', methods=['POST', 'GET'])
 def play():
