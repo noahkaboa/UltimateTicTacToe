@@ -25,12 +25,21 @@ def play():
     small_row = data['small_row']
     small_col = data['small_col']
 
-    print(big_row, big_col, small_row, small_col)
-
-
     if game.make_move(int(big_row), int(big_col), int(small_row), int(small_col)):
         response["success"] = True
         response["message"] = "Move successful"
+        response["wins"] = game.big_board[int(big_row)][int(big_col)].check_winner()
+        valid_moves = []
+        for big_row in range(3):
+            for big_col in range(3):
+                for small_row in range(3):
+                    for small_col in range(3):
+                        if game.is_valid_move(big_row, big_col, small_row, small_col):
+                            valid_moves.append([big_row, big_col, small_row, small_col, "possible"])
+                        else:
+                            valid_moves.append([big_row, big_col, small_row, small_col, ""])
+        response["valid_moves"] = valid_moves
+                        
         return json.dumps(response)
     else:
         response["success"] = False

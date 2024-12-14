@@ -86,10 +86,6 @@ html {
     border-radius: 5%;
 }
 
-.mini-square:hover {
-    background-color: #223075;
-}
-
 .remove-top {
     border-top: none;
 }
@@ -101,4 +97,11 @@ html {
 }
 .remove-right {
     border-right: none;
+}
+
+.possible {
+    background-color: #223075;
+}
+.possible:hover {
+    background-color: #000729;
 }

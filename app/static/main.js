@@ -36,6 +36,7 @@ miniSquares.forEach(miniSquare => {
         }
     })
     return_data = JSON.parse(return_data)
+    console.log(return_data)
     if (return_data['success']) {
         miniSquare.innerHTML = return_data['player'];
         miniSquare.classList.add(return_data['player'].toLowerCase());
@@ -46,6 +47,14 @@ miniSquares.forEach(miniSquare => {
             miniSquare.parentElement.classList.add("win-bg")
             miniSquare.parentElement.innerHTML += return_data['player'].toLowerCase()=="x" ? '<div class="x-win">X</div>' : '<div class="o-win">O</div>';
         }
+
+        for (const move of return_data['valid_moves']) {
+            let [ bigRow, bigCol, smallRow, smallCol, possibility ] = move;
+            const miniSquare = document.getElementById(`${bigRow}-${bigCol}-${smallRow}-${smallCol}`);
+            miniSquare.classList.remove("possible");
+            possibility === "possible" && miniSquare.classList.add("possible");
+        }
+
     }
   });
 });
