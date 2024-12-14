@@ -1,4 +1,8 @@
-miniSquares = document.querySelectorAll('.mini-square');
+const playerDiv = document.getElementById("player");
+const miniSquares = document.querySelectorAll('.mini-square');
+const utnText = document.getElementById("utn");
+const utnButton = document.getElementById("utn-button");
+const moveList = document.getElementById("move-list");
 toMove = "X";
 
 // Reset game on reload
@@ -36,7 +40,6 @@ miniSquares.forEach(miniSquare => {
         }
     })
     return_data = JSON.parse(return_data)
-    console.log(return_data)
     if (return_data['success']) {
         toMove = toMove === "X" ? "O" : "X";
         miniSquare.innerHTML = return_data['player'];
@@ -55,7 +58,16 @@ miniSquares.forEach(miniSquare => {
                 child.classList.add("win-blur");
             }
             miniSquare.parentElement.appendChild(big_win);
+            
         }
+
+        // Update HTML
+        playerDiv.innerHTML = (return_data['player'].toUpperCase() === "X" ? "O" : "X") + " to move";
+        utnText.innerHTML = return_data['utn'];
+
+        let newMove = document.createElement("tr");
+        newMove.innerHTML = `<th scope='row'>${return_data['player']}</th><td>${bigRow}-${bigCol}-${smallRow}-${smallCol}</td>`;
+        moveList.appendChild(newMove);
 
         for (const move of return_data['valid_moves']) {
             let [ bigRow, bigCol, smallRow, smallCol, possibility ] = move;
@@ -63,6 +75,7 @@ miniSquares.forEach(miniSquare => {
             miniSquare.classList.remove("possible");
             possibility === "possible" && miniSquare.classList.add("possible", toMove.toLowerCase());
         }
+
 
     }
   });

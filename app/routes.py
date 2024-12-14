@@ -46,6 +46,8 @@ def play():
                             else:
                                 valid_moves.append([big_row, big_col, small_row, small_col, ""])
             response["valid_moves"] = valid_moves
+
+            response["utn"] = game.board_to_utn()
                             
             return json.dumps(response)
         else:
