@@ -13,7 +13,7 @@ def index():
 @app.route('/play', methods=['POST', 'GET'])
 def play():
     if request.method == 'GET':
-        return redirect(url_for('404'))
+        return redirect(url_for('fourofour'))
 
     if request.method == 'POST':
         data = json.loads(list(request.form.to_dict(flat=False).keys())[0])['data'] #Surely better way to do this
