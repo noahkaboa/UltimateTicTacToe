@@ -7,6 +7,8 @@
         - [x] Website Styling
         - [ ] Home page
         - [ ] Game page
+        - [ ] Analysis board
+            - [ ] FEN equivalent?
 - [ ] Make bot
     - [ ] Minmax search
     - [ ] Monte Carlo Search
