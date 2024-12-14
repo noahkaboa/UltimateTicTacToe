@@ -60,6 +60,7 @@ miniSquares.forEach(miniSquare => {
   });
   miniSquare.addEventListener('mouseover', () => {
     if ([...miniSquare.classList].includes("possible")) {
+        miniSquare.classList.remove("x", "o");
         miniSquare.innerHTML = toMove.toUpperCase();
         miniSquare.classList.add(toMove.toLowerCase());
     }
@@ -67,7 +68,7 @@ miniSquares.forEach(miniSquare => {
   miniSquare.addEventListener('mouseout', () => {
     if ([...miniSquare.classList].includes("possible")) {
         miniSquare.innerHTML = "";
-        miniSquare.classList.remove(toMove.toLowerCase());
+        miniSquare.classList.remove("x", "o");
     }
   });
 });
