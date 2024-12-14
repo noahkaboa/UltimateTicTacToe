@@ -57,11 +57,9 @@ def play():
 
 @app.route('/reset', methods=['POST', 'GET'])
 def reset():
-    if request.method == 'GET':
-        return redirect(url_for('fourofour'))
     global game
     game = BigBoard()
-    return redirect(url_for('index'))
+    return redirect(url_for('game_page'))
 
 @app.errorhandler(404)
 def page_not_found(e):
