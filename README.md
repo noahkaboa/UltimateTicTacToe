@@ -5,6 +5,8 @@
     - [x] Game functions
     - [ ] Website
         - [x] Website Styling
+        - [ ] Home page
+        - [ ] Game page
 - [ ] Make bot
     - [ ] Minmax search
 - [ ] Look into hosting / online multiplayer
