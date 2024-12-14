@@ -3,116 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate Tic Tac Toe</title>
+    <title>Ultimate TicTacToe</title>
     <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </head>
 <body>
-    <div class="info">
-        <div class="player" id="player">{{ current_player }}</div>
-        <div class="winner" id="winner"></div>
+    <h1>Ultimate TicTacToe</h1>
+    <div id="button-container">
+        <!-- PvP button -->
+        <button id="pvp">Player vs Player</button>
+        <!-- PvBot button -->
+        <button id="pvbot">Player vs Bot</button>
+        <!-- Evaluation button -->
+        <button id="eval">Analysis Board</button>
+        <!-- Settings -->
+        <button id="settings">Settings</button>
     </div>
-    <div class="board">
-        <div class="mini-board" id="mini-0">
-            <div class="mini-square remove-top remove-left possible" id="0-0-0-0"></div>
-            <div class="mini-square remove-top possible" id="0-0-0-1"></div>
-            <div class="mini-square remove-top remove-right possible" id="0-0-0-2"></div>
-            <div class="mini-square remove-left possible" id="0-0-1-0"></div>
-            <div class="mini-square possible" id="0-0-1-1"></div>
-            <div class="mini-square remove-right possible" id="0-0-1-2"></div>
-            <div class="mini-square remove-bottom remove-left possible" id="0-0-2-0"></div>
-            <div class="mini-square remove-bottom possible" id="0-0-2-1"></div>
-            <div class="mini-square remove-bottom remove-right possible" id="0-0-2-2"></div>
-        </div>
-        <div class="mini-board" id="mini-1">
-            <div class="mini-square remove-top remove-left possible" id="0-1-0-0"></div>
-            <div class="mini-square remove-top possible" id="0-1-0-1"></div>
-            <div class="mini-square remove-top remove-right possible" id="0-1-0-2"></div>
-            <div class="mini-square remove-left possible" id="0-1-1-0"></div>
-            <div class="mini-square possible" id="0-1-1-1"></div>
-            <div class="mini-square remove-right possible" id="0-1-1-2"></div>
-            <div class="mini-square remove-bottom remove-left possible" id="0-1-2-0"></div>
-            <div class="mini-square remove-bottom possible" id="0-1-2-1"></div>
-            <div class="mini-square remove-bottom remove-right possible" id="0-1-2-2"></div>
-        </div>
-        <div class="mini-board" id="mini-2">
-            <div class="mini-square remove-top remove-left possible" id="0-2-0-0"></div>
-            <div class="mini-square remove-top possible" id="0-2-0-1"></div>
-            <div class="mini-square remove-top remove-right possible" id="0-2-0-2"></div>
-            <div class="mini-square remove-left possible" id="0-2-1-0"></div>
-            <div class="mini-square possible" id="0-2-1-1"></div>
-            <div class="mini-square remove-right possible" id="0-2-1-2"></div>
-            <div class="mini-square remove-bottom remove-left possible" id="0-2-2-0"></div>
-            <div class="mini-square remove-bottom possible" id="0-2-2-1"></div>
-            <div class="mini-square remove-bottom remove-right possible" id="0-2-2-2"></div>
-        </div>
-        <div class="mini-board" id="mini-3">
-            <div class="mini-square remove-top remove-left possible" id="1-0-0-0"></div>
-            <div class="mini-square remove-top possible" id="1-0-0-1"></div>
-            <div class="mini-square remove-top remove-right possible" id="1-0-0-2"></div>
-            <div class="mini-square remove-left possible" id="1-0-1-0"></div>
-            <div class="mini-square possible" id="1-0-1-1"></div>
-            <div class="mini-square remove-right possible" id="1-0-1-2"></div>
-            <div class="mini-square remove-bottom remove-left possible" id="1-0-2-0"></div>
-            <div class="mini-square remove-bottom possible" id="1-0-2-1"></div>
-            <div class="mini-square remove-bottom remove-right possible" id="1-0-2-2"></div>
-        </div>
-        <div class="mini-board" id="mini-4">
-            <div class="mini-square remove-top remove-left possible" id="1-1-0-0"></div>
-            <div class="mini-square remove-top possible" id="1-1-0-1"></div>
-            <div class="mini-square remove-top remove-right possible" id="1-1-0-2"></div>
-            <div class="mini-square remove-left possible" id="1-1-1-0"></div>
-            <div class="mini-square possible" id="1-1-1-1"></div>
-            <div class="mini-square remove-right possible" id="1-1-1-2"></div>
-            <div class="mini-square remove-bottom remove-left possible" id="1-1-2-0"></div>
-            <div class="mini-square remove-bottom possible" id="1-1-2-1"></div>
-            <div class="mini-square remove-bottom remove-right possible" id="1-1-2-2"></div>
-        </div>
-        <div class="mini-board" id="mini-5">
-            <div class="mini-square remove-top remove-left possible" id="1-2-0-0"></div>
-            <div class="mini-square remove-top possible" id="1-2-0-1"></div>
-            <div class="mini-square remove-top remove-right possible" id="1-2-0-2"></div>
-            <div class="mini-square remove-left possible" id="1-2-1-0"></div>
-            <div class="mini-square possible" id="1-2-1-1"></div>
-            <div class="mini-square remove-right possible" id="1-2-1-2"></div>
-            <div class="mini-square remove-bottom remove-left possible" id="1-2-2-0"></div>
-            <div class="mini-square remove-bottom possible" id="1-2-2-1"></div>
-            <div class="mini-square remove-bottom remove-right possible" id="1-2-2-2"></div>
-        </div>
-        <div class="mini-board" id="mini-6">
-            <div class="mini-square remove-top remove-left possible" id="2-0-0-0"></div>
-            <div class="mini-square remove-top possible" id="2-0-0-1"></div>
-            <div class="mini-square remove-top remove-right possible" id="2-0-0-2"></div>
-            <div class="mini-square remove-left possible" id="2-0-1-0"></div>
-            <div class="mini-square possible" id="2-0-1-1"></div>
-            <div class="mini-square remove-right possible" id="2-0-1-2"></div>
-            <div class="mini-square remove-bottom remove-left possible" id="2-0-2-0"></div>
-            <div class="mini-square remove-bottom possible" id="2-0-2-1"></div>
-            <div class="mini-square remove-bottom remove-right possible" id="2-0-2-2"></div>
-        </div>
-        <div class="mini-board" id="mini-7">
-            <div class="mini-square remove-top remove-left possible" id="2-1-0-0"></div>
-            <div class="mini-square remove-top possible" id="2-1-0-1"></div>
-            <div class="mini-square remove-top remove-right possible" id="2-1-0-2"></div>
-            <div class="mini-square remove-left possible" id="2-1-1-0"></div>
-            <div class="mini-square possible" id="2-1-1-1"></div>
-            <div class="mini-square remove-right possible" id="2-1-1-2"></div>
-            <div class="mini-square remove-bottom remove-left possible" id="2-1-2-0"></div>
-            <div class="mini-square remove-bottom possible" id="2-1-2-1"></div>
-            <div class="mini-square remove-bottom remove-right possible" id="2-1-2-2"></div>
-        </div>
-        <div class="mini-board" id="mini-8">
-            <div class="mini-square remove-top remove-left possible" id="2-2-0-0"></div>
-            <div class="mini-square remove-top possible" id="2-2-0-1"></div>
-            <div class="mini-square remove-top remove-right possible" id="2-2-0-2"></div>
-            <div class="mini-square remove-left possible" id="2-2-1-0"></div>
-            <div class="mini-square possible" id="2-2-1-1"></div>
-            <div class="mini-square remove-right possible" id="2-2-1-2"></div>
-            <div class="mini-square remove-bottom remove-left possible" id="2-2-2-0"></div>
-            <div class="mini-square remove-bottom possible" id="2-2-2-1"></div>
-            <div class="mini-square remove-bottom remove-right possible" id="2-2-2-2"></div>
-        </div>
-    </div>
+    
 </body>
-<script src="{{url_for('static', filename='main.js')}}"></script>
 </html>

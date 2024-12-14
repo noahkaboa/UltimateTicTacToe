@@ -1,0 +1,33 @@
+html {
+    background-color: #223075;
+}
+
+#button-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    align-items: center;
+    flex-direction: column;
+    height: 400px;
+}
+
+button {
+    background-color: #f7f7f7;
+    color: #223075;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+h1 {
+    color: #f7f7f7;
+    text-align: center;
+    margin-top: 50px;
+    font: 40px 'Tahoma', sans-serif;
+}
