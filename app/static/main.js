@@ -1,5 +1,5 @@
 miniSquares = document.querySelectorAll('.mini-square');
-
+toMove = "X";
 
 // Reset game on reload
 window.onload = function() {
@@ -38,6 +38,7 @@ miniSquares.forEach(miniSquare => {
     return_data = JSON.parse(return_data)
     console.log(return_data)
     if (return_data['success']) {
+        toMove = toMove === "X" ? "O" : "X";
         miniSquare.innerHTML = return_data['player'];
         miniSquare.classList.add(return_data['player'].toLowerCase());
         if (return_data['winner'] != null) {
@@ -52,9 +53,21 @@ miniSquares.forEach(miniSquare => {
             let [ bigRow, bigCol, smallRow, smallCol, possibility ] = move;
             const miniSquare = document.getElementById(`${bigRow}-${bigCol}-${smallRow}-${smallCol}`);
             miniSquare.classList.remove("possible");
-            possibility === "possible" && miniSquare.classList.add("possible");
+            possibility === "possible" && miniSquare.classList.add("possible", toMove.toLowerCase());
         }
 
+    }
+  });
+  miniSquare.addEventListener('mouseover', () => {
+    if ([...miniSquare.classList].includes("possible")) {
+        miniSquare.innerHTML = toMove.toUpperCase();
+        miniSquare.classList.add(toMove.toLowerCase());
+    }
+  });
+  miniSquare.addEventListener('mouseout', () => {
+    if ([...miniSquare.classList].includes("possible")) {
+        miniSquare.innerHTML = "";
+        miniSquare.classList.remove(toMove.toLowerCase());
     }
   });
 });
