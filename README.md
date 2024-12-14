@@ -9,6 +9,7 @@
         - [ ] Game page
 - [ ] Make bot
     - [ ] Minmax search
+    - [ ] Monte Carlo Search
 - [ ] Look into hosting / online multiplayer
     * Vercel
     * Azure for student
@@ -16,3 +17,4 @@
     * Oracle maybe?
     * Digital Ocean?
     * Maybe sockets/local stuff?
+- [ ] Write actually good README
