@@ -45,8 +45,16 @@ miniSquares.forEach(miniSquare => {
             alert(return_data['winner'] + " wins!");
         }
         if (return_data['wins']){
-            miniSquare.parentElement.classList.add("win-bg")
-            miniSquare.parentElement.innerHTML += return_data['player'].toLowerCase()=="x" ? '<div class="x-win">X</div>' : '<div class="o-win">O</div>';
+            let big_win = document.createElement("div");
+            big_win.innerHTML = return_data['player'].toUpperCase();
+            big_win.classList.add(return_data['player'].toLowerCase()=="x" ? "x-win" : "o-win");
+            const squares = miniSquare.parentElement.children;
+            console.log(squares);
+            for (const child of squares) {
+                console.log(child);
+                child.classList.add("win-blur");
+            }
+            miniSquare.parentElement.appendChild(big_win);
         }
 
         for (const move of return_data['valid_moves']) {

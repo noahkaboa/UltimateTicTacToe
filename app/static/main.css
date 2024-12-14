@@ -2,6 +2,7 @@ html {
     background-color: #000729;
     --x-color: #FF3131;
     --o-color: #31FF31;
+    user-select: none;
 }
 
 .x, .o {
@@ -33,6 +34,7 @@ html {
     font-weight: bold;
 }
 
+
 .o-win {
     position: absolute;
     top: 50%;
@@ -44,13 +46,8 @@ html {
     font-weight: bold;
 }
 
-.win-bg {
-    filter: brightness(0.5);
-    cursor: default;
-}
-.win-bg * {
-    cursor: default;
-    pointer-events: none;
+.win-blur {
+    filter: blur(7px);
 }
 
 .board {
