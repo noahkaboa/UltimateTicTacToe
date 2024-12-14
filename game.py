@@ -104,6 +104,9 @@ class BigBoard:
         else:
             return False
         
+    def is_valid_move(self, big_row, big_col, small_row, small_col):
+        return self.big_board[big_row][big_col].board[small_row][small_col] == "_" and not self.big_board[big_row][big_col].check_winner() and (self.prev_move["small_row"] == -1 or (big_row == self.prev_move["small_row"] and big_col == self.prev_move["small_col"]))
+        
 class Game:
     def __init__(self):
         self.board = BigBoard()
