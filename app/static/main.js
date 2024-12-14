@@ -43,6 +43,7 @@ miniSquares.forEach(miniSquare => {
             alert(return_data['winner'] + " wins!");
         }
         if (return_data['wins']){
+            miniSquare.parentElement.classList.add("win-bg")
             miniSquare.parentElement.innerHTML += return_data['player'].toLowerCase()=="x" ? '<div class="x-win">X</div>' : '<div class="o-win">O</div>';
         }
     }

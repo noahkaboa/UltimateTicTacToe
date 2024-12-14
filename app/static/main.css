@@ -44,6 +44,15 @@ html {
     font-weight: bold;
 }
 
+.win-bg {
+    filter: brightness(0.5);
+    cursor: default;
+}
+.win-bg * {
+    cursor: default;
+    pointer-events: none;
+}
+
 .board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
