@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='404.css')}}">
 </head>
 <body>
-    <h1>404</h1>
-    <p>Page not found</p>
+    <div class="container">
+        <h1>404</h1>
+        <p>Page not found</p>
+        <button onclick="window.location.href = '/';">Home</button>
+    </div>
 </body>
 </html>
