@@ -19,4 +19,5 @@
     * Oracle maybe?
     * Digital Ocean?
     * Maybe sockets/local stuff?
+    * Python Everywhere
 - [ ] Write actually good README
