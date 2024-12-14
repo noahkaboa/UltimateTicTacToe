@@ -4,7 +4,7 @@
 - [ ] Make game
     - [x] Game functions
     - [ ] Website
-        - [ ] Website Styling
+        - [x] Website Styling
 - [ ] Make bot
     - [ ] Minmax search
 - [ ] Look into hosting / online multiplayer
