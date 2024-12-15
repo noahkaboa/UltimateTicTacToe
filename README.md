@@ -1,22 +1,26 @@
 # UltimateTicTacToe
 
 ## TODO
-- [ ] Make game
+- [x] Make game
     - [x] Game functions
-    - [ ] Website
-        - [x] Website Styling
-        - [x] Home page
-        - [x] Game page
-        - [ ] Analysis board
-            - [x] FEN equivalent?
-            - [ ] Undo capabilities
-            - [ ] Eventual bot evaluation
-
+- [ ] Website
+    - [x] Website Styling
+    - [ ] Home page
+        - [ ] Settings
+        - [ ] PvP Online
+        - [ ] PvBot
+        - [ ] Credits?
+    - [x] Game page
+    - [ ] Analysis board
+        - [x] FEN equivalent?
+        - [ ] Undo capabilities
+        - [ ] Eventual bot evaluation
 - [ ] Make bot
     - [ ] Preliminary steps
         - [ ] List all possible moves function
     - [ ] Minmax search
     - [ ] Monte Carlo Search
+    - [ ] AB Pruning
     - [ ] Is ML an option?
 - [ ] Look into hosting / online multiplayer
     * Vercel
