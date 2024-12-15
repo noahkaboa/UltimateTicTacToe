@@ -70,3 +70,28 @@ def page_not_found(e):
 @app.route('/404')
 def fourofour():
     return render_template('404.html')
+
+@app.route('/set-utn', methods=['GET', 'POST'])
+def set_utn():
+    if request.method == 'GET':
+        return redirect(url_for('fourofour'))
+    data = request.form.to_dict(flat=False)
+    print(data)
+    utn = data['utn'][0]
+    game.utn_to_board(utn)
+    valid_moves = []
+    for big_row in range(3):
+        for big_col in range(3):
+            for small_row in range(3):
+                for small_col in range(3):
+                    if game.is_valid_move(big_row, big_col, small_row, small_col):
+                        valid_moves.append([big_row, big_col, small_row, small_col, "possible"])
+                    else:
+                        valid_moves.append([big_row, big_col, small_row, small_col, ""])
+    
+    return_data = {
+        "valid_moves": valid_moves,
+        "expanded_utn": game.utn_parse(utn)
+    }
+    
+    return json.dumps(return_data)

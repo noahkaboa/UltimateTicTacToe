@@ -7,6 +7,7 @@ let toMove = "X";
 let moveCounter = 0;
 
 playerDiv.innerHTML = "X to move";
+utnText.innerHTML = "81 X -1 -1"
 
 // Reset game on reload
 window.onload = function() {
@@ -97,3 +98,54 @@ miniSquares.forEach(miniSquare => {
     }
   });
 });
+
+utnButton.onclick=async() => {
+    var return_data
+    console.log(utnText.value)
+    $.ajax({
+        url: '/set-utn',
+        type: 'POST',
+        async: false,
+        data: {
+            utn: utnText.value
+        },
+        success: function(data) {
+            return_data = data;
+        }
+    })
+    return_data = JSON.parse(return_data)
+    console.log("Upload Data!")
+    console.log(return_data)
+    
+    miniSquares.forEach(miniSquare => {
+        miniSquare.classList.remove("possible");
+    });
+    for (const move of return_data['valid_moves']) {
+        let [ bigRow, bigCol, smallRow, smallCol, possibility ] = move;
+        const miniSquare = document.getElementById(`${bigRow}-${bigCol}-${smallRow}-${smallCol}`);
+        miniSquare.classList.remove("x", "o", "possible");
+        miniSquare.innerHTML = "";
+        possibility === "possible" && miniSquare.classList.add("possible", toMove.toLowerCase());
+        miniSquare.parentElement.classList.remove("win-blur");
+        const win = miniSquare.parentElement.querySelector(".x-win, .o-win");
+        win && win.remove();
+    }
+
+    expandedUTN = return_data['expanded_utn'].slice(0, 80);
+
+    for (let i = 0; i < 3; i++){
+        for (let j = 0; j < 3; j++){
+            for (let k = 0; k < 3; k++){
+                for (let l = 0; l < 3; l++){
+                    const miniSquare = document.getElementById(`${i}-${j}-${k}-${l}`);
+                    miniSquare.classList.remove("x", "o");
+                    miniSquare.innerHTML = expandedUTN[i+j+k+l] == "_" ? "" : return_data['expanded_utn'][i+j+k+l];
+                }
+            }
+        }
+    }
+
+
+
+
+}

@@ -156,3 +156,49 @@ body {
     border-bottom: none;
     color: #000729;
 }
+
+.utn-container {
+    display: flex;
+    justify-content: space-s;
+    margin-top: 20px;
+}
+.utn {
+    background-color: #000729;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5em;
+    font-family: 'Tahoma', sans-serif;
+    font-weight: bold;
+    margin: 0 10px;
+    width: 70%;
+    resize: none;
+    text-align: center;
+}
+.utn-button {
+    background-color: #000729;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Tahoma', sans-serif;
+    font-weight: bold;
+    margin: 0 10px;
+    width: 25%;
+}
+
+.utn-button:hover, .utn:hover {
+    background-color: #223075;
+}
+.utn-button:active {
+    background-color: #000729;
+}
+
+.utn-svg {
+    width: 70%;
+    height: 70%;
+}
