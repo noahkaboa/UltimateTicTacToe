@@ -48,7 +48,12 @@ class LittleBoard:
             return c
         if d:
             return d
-        return False
+        
+        for row in self.board:
+            if "_" in row:
+                return False
+        return "Tie"
+
     
     def make_move(self, row, col, player):
         if self.board[row][col] != "_":
@@ -92,11 +97,16 @@ class BigBoard:
             self.prev_move["small_row"] = small_row
             self.prev_move["small_col"] = small_col
             
-            if self.big_board[big_row][big_col].check_winner():
+            res = self.big_board[big_row][big_col].check_winner()
+
+            if res and res != "Tie":
                 self.game_state.make_move(big_row, big_col, self.to_move)
+            elif res == "Tie":
+                print("Tie!")
 
             if self.big_board[small_row][small_col].check_winner():
                 self.prev_move["small_row"] = -1
+                self.prev_move["small_col"] = -1
 
             self.to_move = "X" if self.to_move == "O" else "O"
             

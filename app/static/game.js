@@ -52,18 +52,25 @@ miniSquares.forEach(miniSquare => {
         if (return_data['winner'] != null) {
             alert(return_data['winner'] + " wins!");
         }
-        if (return_data['wins']){
+        if (return_data['wins'] && return_data['wins'] != "Tie"){
             let big_win = document.createElement("div");
             big_win.innerHTML = return_data['player'].toUpperCase();
             big_win.classList.add(return_data['player'].toLowerCase()=="x" ? "x-win" : "o-win");
             const squares = miniSquare.parentElement.children;
-            console.log(squares);
             for (const child of squares) {
                 console.log(child);
                 child.classList.add("win-blur");
             }
             miniSquare.parentElement.appendChild(big_win);
             
+        }
+        if (return_data['wins'] == "Tie"){
+            let big_win = document.createElement("div");
+            const squares = miniSquare.parentElement.children;
+            for (const child of squares) {
+                child.classList.add("win-blur");
+            }
+            miniSquare.parentElement.appendChild(big_win);
         }
 
         // Update HTML
