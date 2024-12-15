@@ -144,8 +144,4 @@ utnButton.onclick=async() => {
             }
         }
     }
-
-
-
-
 }
