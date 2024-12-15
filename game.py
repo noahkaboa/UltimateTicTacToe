@@ -187,3 +187,7 @@ class BigBoard:
                                 item = items.pop(0)
                                 if item.isdigit():
                                     item = int(item)
+            
+        for little_board in self.big_board:
+            if little_board[0].check_winner():
+                self.game_state.make_move(big_row_i, big_col_j, little_board[0].check_winner())
