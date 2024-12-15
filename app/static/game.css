@@ -122,3 +122,37 @@ body {
     color:#000729;
     padding: 10px;
 }
+
+.move-list-container {
+    overflow: scroll;
+    height: 30%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.move-list {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1em;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.move-list th[scope=col] {
+    background-color: #ddd;
+    color: black;
+    font-weight: bold;
+    padding: 12px 15px;
+    position: sticky;
+    top: 0;
+}
+
+.move-list td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.move-list:last-child td {
+    border-bottom: none;
+    color: #000729;
+}

@@ -3,7 +3,8 @@ const miniSquares = document.querySelectorAll('.mini-square');
 const utnText = document.getElementById("utn");
 const utnButton = document.getElementById("utn-button");
 const moveList = document.getElementById("move-list");
-toMove = "X";
+let toMove = "X";
+let moveCounter = 0;
 
 // Reset game on reload
 window.onload = function() {
@@ -41,6 +42,7 @@ miniSquares.forEach(miniSquare => {
     })
     return_data = JSON.parse(return_data)
     if (return_data['success']) {
+        moveCounter++;
         toMove = toMove === "X" ? "O" : "X";
         miniSquare.innerHTML = return_data['player'];
         miniSquare.classList.add(return_data['player'].toLowerCase());
@@ -66,7 +68,7 @@ miniSquares.forEach(miniSquare => {
         utnText.innerHTML = return_data['utn'];
 
         let newMove = document.createElement("tr");
-        newMove.innerHTML = `<th scope='row'>${return_data['player']}</th><td>${bigRow}-${bigCol}-${smallRow}-${smallCol}</td>`;
+        newMove.innerHTML = `<th scope='row'>${moveCounter}</th><td>${return_data['player']}</td></th><td>${bigRow}-${bigCol}-${smallRow}-${smallCol}</td>`;
         moveList.appendChild(newMove);
 
         for (const move of return_data['valid_moves']) {
