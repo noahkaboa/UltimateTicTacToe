@@ -3,6 +3,7 @@
 ## TODO
 - [x] Make game
     - [x] Game functions
+    - [ ] Fix soft lock
 - [ ] Website
     - [x] Website Styling
     - [ ] Home page
