@@ -6,6 +6,8 @@ const moveList = document.getElementById("move-list");
 let toMove = "X";
 let moveCounter = 0;
 
+playerDiv.innerHTML = "X to move";
+
 // Reset game on reload
 window.onload = function() {
     $.ajax({
