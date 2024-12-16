@@ -151,4 +151,7 @@ utnButton.onclick=async() => {
             }
         }
     }
+
+    toMove = return_data['player'].toUpperCase();
+    playerDiv.innerHTML = toMove + " to move";
 }

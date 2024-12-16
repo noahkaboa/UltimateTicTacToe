@@ -91,7 +91,8 @@ def set_utn():
     
     return_data = {
         "valid_moves": valid_moves,
-        "expanded_utn": game.utn_parse(utn)
+        "expanded_utn": game.utn_parse(utn),
+        "player": game.to_move
     }
     
     return json.dumps(return_data)
