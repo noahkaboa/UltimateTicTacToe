@@ -130,7 +130,7 @@ utnButton.onclick=async() => {
     for (const move of return_data['valid_moves']) {
         let [ bigRow, bigCol, smallRow, smallCol, possibility ] = move;
         const miniSquare = document.getElementById(`${bigRow}-${bigCol}-${smallRow}-${smallCol}`);
-        miniSquare.classList.remove("x", "o", "possible");
+        miniSquare.classList.remove("x", "o", "possible", "win-blur");
         miniSquare.innerHTML = "";
         possibility === "possible" && miniSquare.classList.add("possible", toMove.toLowerCase());
         miniSquare.parentElement.classList.remove("win-blur");
