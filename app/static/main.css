@@ -31,3 +31,8 @@ h1 {
     margin-top: 50px;
     font: 40px 'Tahoma', sans-serif;
 }
+
+.tbd {
+    filter: brightness(0.5);
+    cursor: not-allowed;
+}
