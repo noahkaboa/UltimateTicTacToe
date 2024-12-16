@@ -24,6 +24,7 @@
     - [ ] Monte Carlo Search
     - [ ] AB Pruning
     - [ ] Is ML an option?
+    - [ ] Human strats?
 - [ ] Look into hosting / online multiplayer
     * Vercel
     * Azure for student
