@@ -31,4 +31,7 @@
     * Digital Ocean?
     * Maybe sockets/local stuff?
     * Python Everywhere
+    - [ ] Host on Vercel
+    - [ ] Auto update with action?
+    - [ ] Online multiplayer somehow
 - [ ] Write actually good README
