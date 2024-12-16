@@ -6,6 +6,7 @@
     - [x] Fix soft lock
 - [ ] Website
     - [x] Website Styling
+    - [ ] Mobile Compatability
     - [ ] Home page
         - [ ] Settings
         - [ ] PvP Online
