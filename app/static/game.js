@@ -44,21 +44,18 @@ miniSquares.forEach(miniSquare => {
         }
     })
     return_data = JSON.parse(return_data)
+    console.log(return_data)
     if (return_data['success']) {
         moveCounter++;
         toMove = toMove === "X" ? "O" : "X";
         miniSquare.innerHTML = return_data['player'];
         miniSquare.classList.add(return_data['player'].toLowerCase());
-        if (return_data['winner'] != null) {
-            alert(return_data['winner'] + " wins!");
-        }
         if (return_data['wins'] && return_data['wins'] != "Tie"){
             let big_win = document.createElement("div");
             big_win.innerHTML = return_data['player'].toUpperCase();
             big_win.classList.add(return_data['player'].toLowerCase()=="x" ? "x-win" : "o-win");
             const squares = miniSquare.parentElement.children;
             for (const child of squares) {
-                console.log(child);
                 child.classList.add("win-blur");
             }
             miniSquare.parentElement.appendChild(big_win);
@@ -88,6 +85,15 @@ miniSquares.forEach(miniSquare => {
             possibility === "possible" && miniSquare.classList.add("possible", toMove.toLowerCase());
         }
 
+        if (return_data["game_over"] === "Tie") {
+            alert("It was a tie! GG!")
+        }
+        if (return_data["game_over"] && return_data["game_over"] != "Tie") {
+            alert(`${return_data["game_over"]} won! Congratulations!`)
+            miniSquares.forEach(miniSquare => {
+                miniSquare.
+            })
+        }
 
     }
   });
