@@ -48,6 +48,8 @@ def play():
             response["valid_moves"] = valid_moves
 
             response["utn"] = game.board_to_utn()
+
+            response["game_over"] = game.game_state.check_winner()
                             
             return json.dumps(response)
         else:

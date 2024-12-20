@@ -91,7 +91,7 @@ miniSquares.forEach(miniSquare => {
         if (return_data["game_over"] && return_data["game_over"] != "Tie") {
             alert(`${return_data["game_over"]} won! Congratulations!`)
             miniSquares.forEach(miniSquare => {
-                miniSquare.
+                // miniSquare.
             })
         }
 
