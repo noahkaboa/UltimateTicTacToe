@@ -1,4 +1,9 @@
 # UltimateTicTacToe
+## [website](https://uttt-noah.vercel.app/)
+## Tech Stack
+The website's frontend is coded in HTML, CSS, and JS, and uses JQuery. In the backend, Flask is used to control game logic as well as the bots. The website is hosted on Vercel.
+
+
 
 ## TODO
 - [x] Make game
